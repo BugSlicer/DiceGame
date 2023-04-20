@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/x-icon" href="./imgs/websiteIcon.png" />
+        <title>Dice Game</title>
+    </head>
+    <body>
+        <img class="show-game-info" src="./imgs/question-mark.svg" alt="" />
+        <div class="win-modal">
+            <p class="win-message">🎉 Congrats You Win The Game</p>
+            <button class="play-again-button">🔁 Play Again</button>
+        </div>
+        <div class="game-info-container">
+            <div class="game-info modal">
+                <div class="modal-header">
+                    <p class="game-title">Roll The Dice Game</p>
+                    <p class="close-the-modal">&#10005;</p>
+                </div>
+                <p class="game-explanation-1">
+                    Simple game!, each player
+                    <span class="game-name">Roll The Dice</span> and each roll
+                    value going to be added and stored in the
+                    <span class="current-score-position">Current Score</span>
+                    if the Dice Roll value was 1 then the player going to lose
+                    all his current score and the other plyer turn will starts.
+                </p>
+                <p class="game-explanation-2">
+                    You Can use the
+                    <span class="hold-game-info">🖐🏽 Hold</span> Button to save
+                    all your Points and give the other player the turn to roll
+                    the Dice.
+                </p>
+                <p class="who-win">
+                    any player reach 100 Point After 🖐🏽 Hold He is The Winner
+                    🎉🎊!
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="game-options-container">
+                <button class="play-again-button">🔁 Play Again</button>
+                <div class="dice-image-container">
+                    <img class="dice-image" src="./imgs/dice-1.png" />
+                </div>
+                <button class="roll-dice-button">🎲 Roll Dice</button>
+                <button class="hold-button">🖐🏻 Hold</button>
+            </div>
+            <div class="player player-one-container turn">
+                <p class="player-name player-one-name">Player 1</p>
+                <p class="player-score player-one-score">0</p>
+                <div class="player-current-score-container">
+                    <p class="current-word">Current</p>
+                    <p class="player-current-score player-one-current-score">
+                        0
+                    </p>
+                </div>
+            </div>
+            <div class="player player-two-container">
+                <p class="player-name player-two-name">Player 2</p>
+                <p class="player-score player-two-score">0</p>
+                <div class="player-current-score-container">
+                    <p class="current-word">Current</p>
+                    <p class="player-current-score player-two-current-score">
+                        0
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <script src="./script.js"></script>
+    </body>
+</html>
