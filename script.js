@@ -80,82 +80,65 @@ const checkForWinner = function (playingNow) {
         overlay.classList.add("active");
     }
 };
+
+// function Create Player
+const createPlayer = function (elementName, name) {
+    const player = {
+        name: name,
+        player: elementName,
+        score: 0,
+        currentScore: 0,
+
+        // This Will update The Score in The Object After Each Reroll
+        updateCurrentScore: function (number) {
+            if (number !== -1) {
+                this.currentScore = this.currentScore + number;
+            } else {
+                this.currentScore = 0;
+            }
+        },
+
+        updateScore: function () {
+            this.score = this.score + this.currentScore;
+        },
+
+        // This Method Used After each Dice Rolling
+        changeScoreText: function () {
+            this.scoreElement.textContent = this.score;
+        },
+        changeCurrentScoreText: function () {
+            this.currentScoreElement.textContent = this.currentScore;
+        },
+
+        resetCurrentScore: function () {
+            this.currentScore = 0;
+            this.currentScoreElement.textContent = 0;
+        },
+
+        // Calling This Function Will Add Page Element To The Object
+        // UI Elements
+        addElementsToObject: function () {
+            this.scoreElement = document.querySelector(
+                `.player-${this.player}-score`
+            );
+            this.currentScoreElement = document.querySelector(
+                `.player-${this.player}-current-score`
+            );
+            this.playerContainer = document.querySelector(
+                `.player-${this.player}-container`
+            );
+        },
+    };
+
+    // Add UI Elements To Object
+    player.addElementsToObject();
+
+    return player;
+};
+
 /* ------------- Program Variables ------------- */
-
-// This Object Hold The Data For Player One
-const playerOne = {
-    name: "Player 1",
-    score: 0,
-    currentScore: 0,
-
-    // Elements on The UI
-    scoreElement: document.querySelector(".player-one-score"),
-    currentScoreElement: document.querySelector(".player-one-current-score"),
-    playerContainer: document.querySelector(".player-one-container"),
-
-    // This Will update The Score in The Object After Each Reroll
-    updateCurrentScore: function (number) {
-        if (number !== -1) {
-            this.currentScore = this.currentScore + number;
-        } else {
-            this.currentScore = 0;
-        }
-    },
-
-    updateScore: function () {
-        this.score = this.score + this.currentScore;
-    },
-
-    // This Method Used After each Dice Rolling
-    changeScoreText: function () {
-        this.scoreElement.textContent = this.score;
-    },
-    changeCurrentScoreText: function () {
-        this.currentScoreElement.textContent = this.currentScore;
-    },
-
-    resetCurrentScore: function () {
-        this.currentScore = 0;
-        this.currentScoreElement.textContent = 0;
-    },
-};
-
-// This Object Hold The Data For Player Two
-const playerTwo = {
-    name: "Player 2",
-    score: 0,
-    currentScore: 0,
-    // Elements on The UI
-    scoreElement: document.querySelector(".player-two-score"),
-    currentScoreElement: document.querySelector(".player-two-current-score"),
-    playerContainer: document.querySelector(".player-two-container"),
-
-    // This Will update The Score in The Object After Each Reroll
-    updateCurrentScore: function (number) {
-        if (number !== -1) {
-            this.currentScore = this.currentScore + number;
-        } else {
-            this.currentScore = 0;
-        }
-    },
-
-    updateScore: function () {
-        this.score = this.score + this.currentScore;
-    },
-
-    // This Method Used After each Dice Rolling
-    changeScoreText: function () {
-        this.scoreElement.textContent = this.score;
-    },
-    changeCurrentScoreText: function () {
-        this.currentScoreElement.textContent = this.currentScore;
-    },
-
-    resetCurrentScore: function () {
-        this.currentScore = 0;
-        this.currentScoreElement.textContent = 0;
-    },
-};
+const playerOne = createPlayer("one", "Player 1");
+const playerTwo = createPlayer("two", "Player 2");
 
 // This Will change the scoring for each player either 1 or 2
 let playerTurn = 1;
