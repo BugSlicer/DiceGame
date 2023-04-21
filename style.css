@@ -34,7 +34,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 70%;
 }
 
 .play-again-button,
@@ -59,6 +58,8 @@ body {
 
 .dice-image-container {
     flex-basis: 100;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 .dice-image-container > img {
     width: 90px;
