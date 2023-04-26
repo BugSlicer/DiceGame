@@ -15,4 +15,4 @@ https://bugslicer.github.io/DiceGame/
 
 If you have any feedback, please reach out to me at
 
-bugslicer.01@gmail.com.
+bugslicer.01@gmail.com
