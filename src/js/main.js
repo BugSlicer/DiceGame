@@ -1,6 +1,6 @@
 "use strict";
 /* ------------- all elements on the page ------------- */
-const gameInfoContainer = document.querySelector(".game-info-container");
+const gameInfoContainer = document.querySelector(".game-info-modal-container");
 const overlay = document.querySelector(".overlay");
 // Dice Image
 const diceImage = document.querySelector(".dice-image");
@@ -10,7 +10,7 @@ const playAgainButton = document.querySelectorAll(".play-again-button");
 const rollDiceButton = document.querySelector(".roll-dice-button");
 const holdButton = document.querySelector(".hold-button");
 const showGameInfo = document.querySelector(".show-game-info");
-const closeGameInfo = document.querySelector(".close-the-modal");
+const closeGameInfo = document.querySelector(".close-modal-button");
 
 /* ------------- functions ------------- */
 
@@ -21,7 +21,7 @@ const generateRandomDiceNumber = function () {
 
 // Change The Image of The Dice
 const changeDiceImage = function (number) {
-    diceImage.src = `./imgs/dice-${number}.png`;
+    diceImage.src = `./src/imgs/dice-${number}.png`;
     showDice();
 };
 
@@ -121,9 +121,7 @@ const createPlayer = function (elementName, name) {
             this.scoreElement = document.querySelector(
                 `.player-${this.player}-score`
             );
-            this.currentScoreElement = document.querySelector(
-                `.player-${this.player}-current-score`
-            );
+            this.currentScoreElement = document.querySelector(`.current-score`);
             this.playerContainer = document.querySelector(
                 `.player-${this.player}-container`
             );

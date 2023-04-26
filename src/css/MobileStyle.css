@@ -1,0 +1,52 @@
+@media screen and (max-width: 850px) {
+    .game-container {
+        grid-template-rows: minmax(60px, 70px) repeat(4, minmax(140px, 40px));
+    }
+
+    .game-scoring-container {
+        flex-direction: column;
+        grid-row: 2 / 5;
+    }
+
+    .player-one-container {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+
+    .player-two-container {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .player-name {
+        font-size: 100%;
+        align-self: flex-start;
+    }
+
+    .roll-and-hold-container {
+        grid-row: 5 / 6;
+        width: 100%;
+        align-self: flex-end;
+    }
+
+    .dice-image-container > img {
+        width: 70px;
+    }
+
+    .play-again-button {
+        width: 100%;
+    }
+
+    .info-again-container {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .current-score-container {
+        grid-row: 4/ 6;
+        grid-column: 3 / 6;
+        height: 25%;
+    }
+}

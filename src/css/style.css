@@ -1,0 +1,387 @@
+/* CSS Reset - start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: "Maven Pro", sans-serif;
+}
+/* CSS Reset - End */
+
+/* CSS Variables - Start */
+:root {
+    /*Light Mood*/
+    --header-bg-l: rgb(39, 31, 65);
+    --logo-shad-l: #2c2c2c41;
+    --font-col-l: rgb(255, 253, 255);
+
+    --body-bg-l: linear-gradient(
+        68.1deg,
+        rgb(255, 200, 69) -0.3%,
+        rgb(239, 69, 115) 100.2%
+    );
+    --container-col-l: rgb(255, 160, 105);
+    --button-font-col: rgb(45, 40, 61);
+    --button-background-color: rgba(214, 214, 214, 0.699);
+    --button-background-color-hover: rgb(241, 241, 241);
+
+    --player-score-color: rgb(45, 40, 61);
+    --current-score-color: rgba(255, 171, 74, 0.692);
+    --player-turn-col: rgb(255, 213, 183);
+    --player-name-shadow: rgb(255, 131, 29);
+    --orange-color: rgb(255, 189, 66);
+    --close-button: rgb(255, 169, 169);
+}
+/* CSS Variable - End */
+
+/* Body styling -start */
+body {
+    background-image: var(--body-bg-l);
+    display: flex;
+    flex-direction: column;
+}
+html,
+body {
+    min-height: 100%;
+}
+/* Body styling - End */
+
+/* Header Styling - Start */
+.header-container {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: var(--header-bg-l);
+    box-shadow: 0px 3px 5px -1px var(--logo-shad-l);
+}
+
+.website-logo {
+    color: var(--font-col-l);
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px var(--logo-shad-l);
+    cursor: pointer;
+}
+/* Header Styling - End */
+
+/* General Styling - Start */
+.button {
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--button-background-color);
+    transition: background-color 0.5s;
+    color: var(--button-font-col);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+.button:hover {
+    background-color: var(--button-background-color-hover);
+}
+
+.player {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.player-name {
+    font-size: 45px;
+    color: var(--button-font-col);
+    justify-self: flex-start;
+}
+
+.player-score {
+    font-size: 45px;
+    color: var(--button-font-col);
+    font-weight: 500;
+    position: relative;
+    top: 30%;
+}
+
+/* General Styling - End */
+
+/* Game Info Button & Play Again Start */
+.game-container {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: minmax(60px, 70px) repeat(3, minmax(150px, 40px));
+}
+
+.info-again-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    grid-column: 2 / 7;
+    grid-row: 1 / 1;
+}
+
+.show-game-info {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: var(--button-background-color);
+    border-radius: 100%;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.068);
+    cursor: pointer;
+    transition: background-color 0.5s;
+    width: 40px;
+    height: 40px;
+}
+
+.show-game-info:hover {
+    background-color: var(--orange-color);
+}
+
+.play-again-button {
+    width: 50%;
+}
+
+/* Game Info Button & Play Again - End*/
+
+.game-scoring-container {
+    display: flex;
+    flex-direction: row;
+    grid-row: 2 / 8;
+    grid-column: 2 / 7;
+    border-radius: 10px;
+    background: var(--container-col-l);
+    box-shadow: 0px 5px 5px 0px var(--logo-shad-l);
+}
+
+.player-one-container {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.player-two-container {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Active Part */
+.player-one-container.turn {
+    background-color: var(--player-turn-col);
+    text-shadow: 1px 1px 2px var(--player-name-shadow);
+}
+
+.player-two-container.turn {
+    background-color: var(--player-turn-col);
+    text-shadow: 1px 1px 2px var(--player-name-shadow);
+}
+
+/* Current Score - Start */
+.current-score-container {
+    grid-column: 4;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    background-color: var(--current-score-color);
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.current-score-word {
+    color: var(--player-score-color);
+    font-weight: 700;
+}
+
+.current-score {
+    color: var(--player-score-color);
+    font-size: 27px;
+}
+/* Current Score - End */
+/* Dice part - Start */
+.game-dice-container {
+    grid-column: 4;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-image {
+    width: 100px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.dice-image.active {
+    opacity: 1;
+}
+
+/* Dice part - End */
+
+/* Hold & Roll Button Part - Start */
+.roll-and-hold-container {
+    width: 60%;
+    justify-self: center;
+    grid-column: 3/6;
+    grid-row: 4;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+/* Hold & Roll Button Part - End */
+
+/* Footer Starts */
+footer {
+    width: 100%;
+    background-color: var(--header-bg-l);
+    color: var(--font-col-l);
+
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.footer-info {
+    color: var(--font-col-l);
+}
+
+.footer-info > a:hover {
+    color: var(--font-col-l);
+}
+.footer-info > a:link,
+.footer-info > a:visited,
+.footer-info > a:active {
+    color: var(--orange-color);
+}
+
+/* Footer End */
+
+/* Game Info Modal - Start */
+.game-info-modal-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    padding: 20px 15px;
+    border-radius: 6px;
+    width: 330px;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(240, 240, 240);
+    transform: translate(-50%, -50%);
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    z-index: 100;
+}
+
+.game-info-modal-container.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.game-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-title {
+    font-weight: 700;
+    font-size: 120%;
+    color: var(--button-font-col);
+}
+
+.close-modal-button {
+    width: 20px;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 4px;
+    transition: background-color 0.5s;
+}
+
+.close-modal-button:hover {
+    background-color: var(--close-button);
+}
+
+.game-instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 90%;
+    font-weight: 500;
+    justify-self: center;
+}
+
+.note-for-game-instruction {
+    font-style: italic;
+    margin-top: 6px;
+}
+/* Game Info Modal - End */
+
+/* Winner Modal - Start */
+.winner-modal-container > .win-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 100%;
+    padding: 50px 15px;
+    border-radius: 6px;
+    width: 330px;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(240, 240, 240);
+    transform: translate(-50%, -50%);
+    gap: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    z-index: 100;
+}
+
+.winner-modal-container > .win-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Winner Modal - End */
+
+/* Overlay - Start */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #22222252;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+/* Overlay - End */
