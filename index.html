@@ -28,102 +28,107 @@
         <!-- Google Fonts - End -->
     </head>
     <body>
-        <!-- Header Container - Starts -->
-        <header class="header-container">
-            <p class="website-logo">Roll it</p>
-        </header>
-        <!-- Header Container - Ends -->
+        <div class="container">
+            <!-- Header Container - Starts -->
+            <header class="header-container">
+                <p class="website-logo">Roll it</p>
+            </header>
+            <!-- Header Container - Ends -->
 
-        <!-- Game Container - Starts -->
-        <div class="game-container">
-            <div class="info-again-container">
-                <img
-                    class="show-game-info"
-                    src="./src/imgs/question-mark.svg"
-                    alt=""
-                />
-                <button class="button play-again-button">🔁 Play Again</button>
-            </div>
-            <div class="game-scoring-container">
-                <div class="player player-one-container turn">
-                    <p class="player-name player-one-name">Player 1</p>
-                    <p class="player-score player-one-score">0</p>
-                </div>
-                <div class="player player-two-container">
-                    <p class="player-name player-two-name">Player 2</p>
-                    <p class="player-score player-two-score">0</p>
-                </div>
-            </div>
-            <div class="current-score-container">
-                <p class="current-score-word">Score</p>
-                <p class="current-score">0</p>
-            </div>
-            <div class="game-dice-container">
-                <div class="dice-image-container">
-                    <img class="dice-image" src="./src/imgs/dice-1.png" />
-                </div>
-            </div>
-            <div class="roll-and-hold-container">
-                <button class="button roll-dice-button">🎲 Roll Dice</button>
-                <button class="button hold-button">🖐 Hold</button>
-            </div>
-        </div>
-        <!-- Game Container - Ends -->
-
-        <!-- Modal Container - Starts -->
-        <div class="modals-container">
-            <div class="game-info-modal-container">
-                <div class="game-info-header">
-                    <p class="modal-title">Roll The Dice Game</p>
+            <!-- Game Container - Starts -->
+            <div class="game-container">
+                <div class="info-again-container">
                     <img
-                        src="./src/imgs/closeModalIcon.svg"
+                        class="show-game-info"
+                        src="./src/imgs/question-mark.svg"
                         alt=""
-                        class="close-modal-button"
                     />
-                </div>
-                <div class="game-instructions">
-                    <p>Little Simple Dice Game!</p>
-                    <p>
-                        1. Each player takes a turn to roll the dice, and each
-                        roll is added to their current score.
-                    </p>
-                    <p>
-                        2. If the dice roll is a 1, then the player loses all of
-                        their score.
-                    </p>
-                    <p>
-                        3. The player can choose to hold and save all of the
-                        collected score in their container.
-                    </p>
-                    <p>
-                        4. The first player to reach a score of 100 wins the
-                        game! 🎉🎊.
-                    </p>
-                    <p class="note-for-game-instruction">
-                        *The light container indicates the player's turn.
-                    </p>
-                </div>
-            </div>
-            <div class="winner-modal-container">
-                <div class="win-modal">
-                    <p class="win-message">🎉 Congrats You Win The Game</p>
                     <button class="button play-again-button">
                         🔁 Play Again
                     </button>
                 </div>
+                <div class="game-scoring-container">
+                    <div class="player player-one-container turn">
+                        <p class="player-name player-one-name">Player 1</p>
+                        <p class="player-score player-one-score">0</p>
+                    </div>
+                    <div class="player player-two-container">
+                        <p class="player-name player-two-name">Player 2</p>
+                        <p class="player-score player-two-score">0</p>
+                    </div>
+                </div>
+                <div class="current-score-container">
+                    <p class="current-score-word">Score</p>
+                    <p class="current-score">0</p>
+                </div>
+                <div class="game-dice-container">
+                    <div class="dice-image-container">
+                        <img class="dice-image" src="./src/imgs/dice-1.png" />
+                    </div>
+                </div>
+                <div class="roll-and-hold-container">
+                    <button class="button roll-dice-button">
+                        🎲 Roll Dice
+                    </button>
+                    <button class="button hold-button">🖐 Hold</button>
+                </div>
             </div>
-            <div class="overlay"></div>
+            <!-- Game Container - Ends -->
+
+            <!-- Modal Container - Starts -->
+            <div class="modals-container">
+                <div class="game-info-modal-container">
+                    <div class="game-info-header">
+                        <p class="modal-title">Roll The Dice Game</p>
+                        <img
+                            src="./src/imgs/closeModalIcon.svg"
+                            alt=""
+                            class="close-modal-button"
+                        />
+                    </div>
+                    <div class="game-instructions">
+                        <p>Little Simple Dice Game!</p>
+                        <p>
+                            1. Each player takes a turn to roll the dice, and
+                            each roll is added to their current score.
+                        </p>
+                        <p>
+                            2. If the dice roll is a 1, then the player loses
+                            all of their score.
+                        </p>
+                        <p>
+                            3. The player can choose to hold and save all of the
+                            collected score in their container.
+                        </p>
+                        <p>
+                            4. The first player to reach a score of 100 wins the
+                            game! 🎉🎊.
+                        </p>
+                        <p class="note-for-game-instruction">
+                            *The light container indicates the player's turn.
+                        </p>
+                    </div>
+                </div>
+                <div class="winner-modal-container">
+                    <div class="win-modal">
+                        <p class="win-message">🎉 Congrats You Win The Game</p>
+                        <button class="button play-again-button">
+                            🔁 Play Again
+                        </button>
+                    </div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+            <!-- Modal Container - End -->
+
+            <!-- Footer Container - Starts -->
+            <footer>
+                <p class="footer-info">
+                    Made by <a href="https://github.com/BugSlicer">BugSlicer</a>
+                </p>
+            </footer>
+            <!-- Footer Container - Ends -->
         </div>
-        <!-- Modal Container - End -->
-
-        <!-- Footer Container - Starts -->
-        <footer>
-            <p class="footer-info">
-                Made by <a href="https://github.com/BugSlicer">BugSlicer</a>
-            </p>
-        </footer>
-        <!-- Footer Container - Ends -->
-
         <script src="./src/js/main.js"></script>
     </body>
 </html>
