@@ -36,8 +36,10 @@
 
 /* Body styling -start */
 .container {
-    position: relative;
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100svh;
 }
 
 body {
@@ -47,10 +49,11 @@ body {
 }
 html,
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
+
 /* Body styling - End */
 
 /* Header Styling - Start */
@@ -125,6 +128,7 @@ body {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: minmax(60px, 70px) repeat(3, minmax(150px, 40px));
+    margin-bottom: 50px;
 }
 
 .info-again-container {
@@ -260,17 +264,18 @@ body {
 footer {
     background-color: var(--header-bg-l);
     color: var(--font-col-l);
-
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
+
 .footer-info {
     color: var(--font-col-l);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .footer-info > a:hover {
